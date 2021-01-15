@@ -5,6 +5,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+
+	"github.com/dell/gofsutil"
 )
 
 func main() {
@@ -25,9 +27,9 @@ func main() {
 
 	var mntFlags []string
 
-	fmt.Fprintf("Performin Bind og staging to target path")
-	if err := gofsutil.BindMount(context.Background(), stagingPath, targetPath, mntFlags...); err != nil {
-		return status.Error(codes.Internal, utils.GetMessageWithRunID(rid, "error publish volume to target path: %v", err))
+	fmt.Printf("Performin Bind og staging to target path")
+	if err := gofsutil.BindMount(context.Background(), *stagingPath, *targetPath, mntFlags...); err != nil {
+		fmt.Printf("Error during Bind mount:", err)
 	}
 
 }
