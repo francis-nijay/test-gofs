@@ -1,4 +1,4 @@
-module github.com/dell/csi-unity
+module github.com/dell/test-gofs
 
 go 1.13
 

@@ -27,7 +27,7 @@ func main() {
 
 	var mntFlags []string
 
-	fmt.Printf("Performin Bind og staging to target path")
+	fmt.Printf("Performin Bind of staging to target path")
 	if err := gofsutil.BindMount(context.Background(), *stagingPath, *targetPath, mntFlags...); err != nil {
 		fmt.Printf("Error during Bind mount:", err)
 	}
